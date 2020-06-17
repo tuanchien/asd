@@ -1,0 +1,71 @@
+# Directory information
+test_ann_dir: 'download/ava_activespeaker_test_v1.0'     # Extracted test annotation directory.
+train_ann_dir: 'download/ava_activespeaker_train_v1.0'   # Extracted training annotation directory.
+extracted_path: 'extracted/10fps'                     # Video (jpg) and audio (mfcc) extraction directory.
+download_path: 'download'                       # Download directory for archives.
+vid_save_path: 'download/trainval'              # Download directory for video files.
+
+# Metadata file containing starting timestamp to use for extraction
+start_ts: 'start_ts'
+
+# Video extraction parameters
+fps: 10         # Video extraction rate (frames per second).
+eps: 3.0        # Rollback buffer for each extraction, in seconds of data.
+ann_stride: 4   # Number of video frames to skip between each training/testing sample.
+
+# Audio
+mfcc_window_size: 0.025   # Size of each MFCC window (seconds)
+stride: 0.01              # Stride (seconds) between each MFCC vector.
+nmfcc: 13                 # Number of MFCC coefficients to use.
+apply_mean: True          # Normalise against mean of audio file.
+apply_stddev: True        # Normalise against standard deviation of audio file.
+
+# Sequence size information for training
+sequence_size: 1          # Size of the sequence (number of time points) to use.
+vid_frame_size: 5         # Number of video frames in each time point.
+mfcc_frame_size: 20       # Number of MFCC vectors in each time point.
+
+# Training files
+train_annotations_full: 'extracted/10fps/train_annotations.pkl'
+test_annotations_full: 'extracted/10fps/test_annotations.pkl'
+train_annotations_subset: 'extracted/10fps/train_annotations_subset.pkl'
+test_annotations_subset: 'extracted/10fps/test_annotations_subset.pkl'
+
+# Generate subset settings
+train_keep_ratio: 1.0     # Proportion of training annotations to use.
+valid_keep_ratio: 0.1      # Proportion of validation annotations to use.
+test_keep_ratio: 1.0      # Proportion of testing annotations to use.
+filter_out: False         # Whether to filter out certain annotations.
+filter_classes: {}        # Class labels to filter out.
+remove_small_faces: False # Whether you want to remove small faces.
+small_face_threshold: 100 # Minimum viable face dimension (width/height) when removing faces.
+
+# Data generator
+classes: {'SPEAKING_AUDIBLE': 0, 'NOT_SPEAKING': 1, 'SPEAKING_NOT_AUDIBLE': 1}  # Label classes.
+
+# Training settings
+mode: 's_av'          # NN model to use. s_v for video, s_a for audio, s_av for both
+epochs: 40            # Number of epochs in training.
+batch_size: 16        # Batch size.
+width: 100            # Width of face image
+height: 100           # Height of face image
+channels: 1           # Number of colour channels.
+learning_rate: 0.01   # Learning rate to use in optimiser.
+main_out_weight: 1    # Weight of AV loss in multi task learning.
+v_out_weight: 0.4     # Weight of video loss in multi task learning.
+a_out_weight: 0.4     # Weight of audio loss in multi task learning.
+load_weights: True    # Whether we should try to load the weights file.
+weights_file: 'last.hdf5' # Name of weights file.
+optimiser: 'SGD'      # Name of optimiser to use.
+annotation_type: 'full' # Use annotations_full or subset_annotations files.
+resample: True        # Rather than generate a subset of annotations offline, resample for each epoch. Will be slower between epochs.
+save_best_only: False # Save model checkpoint only when validation has improved.
+augment: False        # Whether to use augmentation
+dtype: 'float32'      # The data type for training
+
+# Early stopping
+use_earlystopping: False  # Whether to use early stopping.
+es_patience: 5  # Number of early stopping epochs you will allow with no validation improvement.
+
+# Tensorboard
+tb_logdir: '/tmp/Graph' # Log directory for tensorboard meta data.

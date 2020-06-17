@@ -1,0 +1,7 @@
+# Configuration file for telegram bot.
+# Example:
+# api_key: '391285828:BJDfj3FdJFkDe-DKFJ#KU*#FEDJF'
+# chat_id: '357829'
+
+api_key: 'your telegram bot api key'
+chat_id: 'telegram chat id'
