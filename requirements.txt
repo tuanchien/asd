@@ -1,4 +1,4 @@
-tensorflow==2.1.*
+tensorflow==2.2.*
 ffmpy==0.2.*
 librosa==0.7.*
 numpy==1.18.*
