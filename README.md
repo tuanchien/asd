@@ -1,5 +1,8 @@
 # ava_asd
-Scripts and models based on the AVA Active Speaker Detection dataset.
+Scripts for a pipeline to:
+ - Process video data for the active speaker classification problem (via face detections).  Uses the AVA ActiveSpeaker data set.
+ - Train a model (not state of the art).
+ - Evaluate the model against the public validation set.
 
 ## Active speaker detection problem
 Tries to classify who the active speakers are in a video.
@@ -124,3 +127,7 @@ To evaluate a directory of models and save the results in a CSV file, run the fo
 ```
 ava-evaluate configs/config.yaml data --weights-path your/path/to/many/weights/
 ```
+
+# References
+1. [AVA-ActiveSpeaker: An Audio-Visual Dataset for Active Speaker Detection](https://arxiv.org/abs/1901.01342)
+2. [Naver at ActivityNet Challenge 2019 -- Task B Active Speaker Detection (AVA)](https://arxiv.org/abs/1906.10555)
