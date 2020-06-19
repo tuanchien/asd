@@ -6,10 +6,9 @@ with open('requirements.txt') as f:
 setup(
     name='ava_asd',
     description='Scripts and models for the AVA Active Speaker Detection dataset.',
-    license='',
+    license='Apache License Version 2.0',
     author='Tuan Chien, James Diprose',
-    author_email='',
-    url='https://gitlab.com/tuanchien/ava_asd',
+    url='https://github.com/tuanchien/asd',
     packages=find_packages(),
     install_requires=install_requires,
     python_requires='>=3.7',

@@ -1,3 +1,17 @@
+# Copyright 2020 Tuan Chien, James Diprose
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 # Download script for the AVA active speaker dataset.
 # It relies on the information provided by
 # - https://github.com/cvdfoundation/ava-dataset
@@ -23,8 +37,7 @@ ava_asd_test_ann_hash = 'c00210f1d62caaf32759afb92b4562cc'
 asd_vid_url_prefix = 'https://s3.amazonaws.com/ava-dataset/trainval/'
 
 # Video URLs
-ava_asd_vids_url = 'https://onedrive.live.com/download?cid=6917C8254765425B&resid=6917C8254765425B%2' \
-                   '1161&authkey=AP-6tsmSFUNc-Us'
+ava_asd_vids_url = 'https://raw.githubusercontent.com/tuanchien/asd/master/ava_speech_file_names_v1.csv'
 ava_asd_vids_url_hash = 'aa990d3a628b7cb0c181572e600d79c0'
 
 
