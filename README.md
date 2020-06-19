@@ -128,6 +128,11 @@ To evaluate a directory of models and save the results in a CSV file, run the fo
 ava-evaluate configs/config.yaml data --weights-path your/path/to/many/weights/
 ```
 
+# Example model
+[Download weights file](https://couch.science/models/example.hdf5)
+
+AP against original public validation set: 0.7151
+
 # References
 1. [AVA-ActiveSpeaker: An Audio-Visual Dataset for Active Speaker Detection](https://arxiv.org/abs/1901.01342)
 2. [Naver at ActivityNet Challenge 2019 -- Task B Active Speaker Detection (AVA)](https://arxiv.org/abs/1906.10555)
